@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import logo from "./IMG-20260523-WA0057.jpg";
 
 export default function ExKaviyaTopupStore() {
   const [uid, setUid] = useState("");
-  const [packageName, setPackageName] = useState("25 Diamonds — LKR 85");
+  const [selectedPackage, setSelectedPackage] = useState("25 Diamonds — LKR 85");
 
   const packages = [
     "25 Diamonds — LKR 85",
@@ -21,62 +20,47 @@ export default function ExKaviyaTopupStore() {
   ];
 
   const handleOrder = () => {
-    const msg =
-      `Hello EX.KAVIYA TOP UP STORE%0A` +
-      `UID: ${uid}%0A` +
-      `Package: ${packageName}%0A` +
-      `Payment screenshot attached.`;
+    const message = `Hello EX.KAVIYA TOP UP STORE
 
-    window.open(`https://wa.me/94726198188?text=${msg}`, "_blank");
+UID: ${uid}
+Package: ${selectedPackage}
+
+Payment screenshot attached.`;
+
+    window.open(
+      `https://wa.me/94726198188?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-black text-white p-6">
       <div className="max-w-4xl mx-auto">
 
-        <div className="text-center py-8">
-          <div className="grid md:grid-cols-2 gap-4 mb-8">
-  {packages.map((item) => (
-    <div
-      key={item}
-      className="bg-white/10 rounded-3xl p-5 border border-cyan-500 text-xl"
-    >
-      {item}
-    </div>
-  ))}
-</div>
-            src={logo}
-            alt="EX.KAVIYA"
-            className="w-40 h-40 mx-auto rounded-full object-cover border-4 border-purple-500 shadow-2xl"
-          />
-
-          <h1 className="text-5xl font-black text-cyan-400 mt-6">
+        <div className="text-center py-10">
+          <h1 className="text-5xl font-black text-cyan-400">
             EX.KAVIYA
           </h1>
-
-          <p className="text-2xl mt-2 font-semibold">Diamond Store</p>
-
-          <p className="text-slate-300 mt-2">
-            Fast • Safe • Trusted
-          </p>
+          <p className="text-2xl mt-3">Diamond Store</p>
+          <p className="text-slate-300 mt-2">Fast • Safe • Trusted</p>
         </div>
 
-   <div className="grid md:grid-cols-2 gap-4 mb-8">
-  {packages.map((item) => (
-    <div
-      key={item}
-      className="bg-white/10 rounded-3xl p-5 border border-cyan-500 text-xl"
-    >
-      {item}
-    </div>
-  ))}
-</div> 
+        <div className="grid md:grid-cols-2 gap-4 mb-10">
+          {packages.map((item) => (
+            <div
+              key={item}
+              className="bg-white/10 rounded-3xl p-5 border border-cyan-500 text-xl"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
 
         <a
           href="https://wa.me/94726198188"
           target="_blank"
           rel="noreferrer"
-          className="block bg-green-500 text-center text-white rounded-3xl p-6 text-3xl font-black mb-8"
+          className="block bg-green-500 text-center rounded-3xl p-6 text-3xl font-bold mb-8"
         >
           WhatsApp Orders
           <br />
@@ -84,23 +68,15 @@ export default function ExKaviyaTopupStore() {
         </a>
 
         <div className="bg-orange-500 rounded-3xl p-6 mb-8">
-          <h2 className="text-2xl font-bold">
-            eZ Cash Wallet Top-Up
-          </h2>
-
-          <p className="mt-3 font-bold">
-            Send payment to: 0779887708
-          </p>
-
+          <h2 className="text-2xl font-bold">eZ Cash Wallet Top-Up</h2>
+          <p className="mt-2 font-bold">Send payment to: 0779887708</p>
           <p className="mt-3">
             Payment screenshot එක සහ UID එක WhatsApp එකෙන් එවන්න.
           </p>
         </div>
 
         <div className="bg-white/10 rounded-3xl p-6">
-          <h2 className="text-3xl font-bold mb-4">
-            Place Your Order
-          </h2>
+          <h2 className="text-3xl font-bold mb-4">Place Your Order</h2>
 
           <input
             type="text"
@@ -111,8 +87,8 @@ export default function ExKaviyaTopupStore() {
           />
 
           <select
-            value={packageName}
-            onChange={(e) => setPackageName(e.target.value)}
+            value={selectedPackage}
+            onChange={(e) => setSelectedPackage(e.target.value)}
             className="w-full p-4 rounded-xl text-black mb-4"
           >
             {packages.map((item) => (
