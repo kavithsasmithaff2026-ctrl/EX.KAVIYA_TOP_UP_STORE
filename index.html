@@ -1,98 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EX.KAVIYA TOP UP STORE</title>
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:#08153a;
-color:#fff;
-}
-.container{
-max-width:500px;
-margin:auto;
-padding:20px;
-text-align:center;
-}
-.logo{
-width:170px;
-border-radius:50%;
-}
-.price-list{
-background:#1e2b57;
-padding:18px;
-margin:12px 0;
-border-radius:16px;
-font-size:24px;
-text-align:left;
-}
-input,select,button{
-width:100%;
-padding:16px;
-margin-top:12px;
-border-radius:12px;
-border:none;
-font-size:18px;
-}
-button{
-background:#06b6d4;
-color:white;
-font-weight:bold;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>EX.KAVIYA Diamond Store</title>
 </head>
 <body>
-
-<div class="container">
-
-<img class="logo" src="https://i.ibb.co/5xJ0r0K/exkaviya-logo.jpg">
-
-<h1 style="color:#10d9ff;">EX.KAVIYA</h1>
-<h2>Diamond Store</h2>
-
-<div class="price-list">25 Diamonds — LKR 85</div>
-<div class="price-list">50 Diamonds — LKR 170</div>
-<div class="price-list">100 Diamonds — LKR 320</div>
-<div class="price-list">200 Diamonds — LKR 640</div>
-<div class="price-list">310 Diamonds — LKR 970</div>
-<div class="price-list">520 Diamonds — LKR 1620</div>
-<div class="price-list">1060 Diamonds — LKR 3200</div>
-
-<h2>Place Your Order</h2>
-
-<input id="uid" placeholder="Enter Free Fire UID">
-
-<select id="pkg">
-<option>25 Diamonds — LKR 85</option>
-<option>50 Diamonds — LKR 170</option>
-<option>100 Diamonds — LKR 320</option>
-<option>200 Diamonds — LKR 640</option>
-<option>310 Diamonds — LKR 970</option>
-<option>520 Diamonds — LKR 1620</option>
-<option>1060 Diamonds — LKR 3200</option>
-</select>
-
-<button onclick="orderNow()">Order Now on WhatsApp</button>
-
-</div>
-
-<script>
-function orderNow(){
-const uid=document.getElementById("uid").value;
-const pkg=document.getElementById("pkg").value;
-
-const msg=`EX.KAVIYA Order
-UID: ${uid}
-Package: ${pkg}`;
-
-window.open(
-`https://wa.me/94726198188?text=${encodeURIComponent(msg)}`
-);
-}
-</script>
-
+  <div id="root"></div>
 </body>
 </html>
