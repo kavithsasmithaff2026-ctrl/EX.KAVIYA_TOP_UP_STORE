@@ -1,74 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>EX.KAVIYA Diamond Store</title>
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EX.KAVIYA TOP UP STORE</title>
 <style>
 body{
 margin:0;
-background:#08153a;
-color:white;
 font-family:Arial;
+background:#08153a;
+color:#fff;
+}
+.container{
+max-width:500px;
+margin:auto;
 padding:20px;
+text-align:center;
 }
-.container{max-width:700px;margin:auto}
-.card{
-background:#24345d;
+.logo{
+width:170px;
+border-radius:50%;
+}
+.price-list{
+background:#1e2b57;
 padding:18px;
-margin-bottom:12px;
-border-radius:14px;
-font-size:22px;
+margin:12px 0;
+border-radius:16px;
+font-size:24px;
+text-align:left;
 }
-.green{background:#16a34a}
-.orange{background:#f97316}
 input,select,button{
 width:100%;
-padding:15px;
+padding:16px;
+margin-top:12px;
 border-radius:12px;
+border:none;
 font-size:18px;
-margin-bottom:15px;
-box-sizing:border-box;
 }
 button{
-background:#10d9ff;
+background:#06b6d4;
 color:white;
-border:none;
 font-weight:bold;
 }
 </style>
 </head>
-
 <body>
+
 <div class="container">
 
-<div style="text-align:center">
-<img
-src="https://i.ibb.co/5xJ0r0K/exkaviya-logo.jpg"
-width="160"
-style="border-radius:50%"
->
-<h1 style="color:#10d9ff">EX.KAVIYA</h1>
+<img class="logo" src="https://i.ibb.co/5xJ0r0K/exkaviya-logo.jpg">
+
+<h1 style="color:#10d9ff;">EX.KAVIYA</h1>
 <h2>Diamond Store</h2>
-<p>Fast • Safe • Trusted</p>
-</div>
 
-<div class="card green" style="text-align:center">
-<h2>WhatsApp Orders</h2>
-<a href="https://wa.me/94726198188" style="color:white;font-size:34px;font-weight:bold">
-0726198188
-</a>
-</div>
+<div class="price-list">25 Diamonds — LKR 85</div>
+<div class="price-list">50 Diamonds — LKR 170</div>
+<div class="price-list">100 Diamonds — LKR 320</div>
+<div class="price-list">200 Diamonds — LKR 640</div>
+<div class="price-list">310 Diamonds — LKR 970</div>
+<div class="price-list">520 Diamonds — LKR 1620</div>
+<div class="price-list">1060 Diamonds — LKR 3200</div>
 
-<div class="card orange">
-<h2>eZ Cash Wallet Top-Up</h2>
-<p>Send payment to: 0779887708</p>
-</div>
+<h2>Place Your Order</h2>
 
-<h2>Diamond Price List</h2>
+<input id="uid" placeholder="Enter Free Fire UID">
 
-<select id="package">
+<select id="pkg">
 <option>25 Diamonds — LKR 85</option>
 <option>50 Diamonds — LKR 170</option>
 <option>100 Diamonds — LKR 320</option>
@@ -76,26 +73,23 @@ style="border-radius:50%"
 <option>310 Diamonds — LKR 970</option>
 <option>520 Diamonds — LKR 1620</option>
 <option>1060 Diamonds — LKR 3200</option>
-<option>1580 Diamonds — LKR 4820</option>
 </select>
 
-<div class="card">
-<h2>Place Your Order</h2>
-
-<input id="uid" placeholder="Enter Free Fire UID">
-
 <button onclick="orderNow()">Order Now on WhatsApp</button>
-</div>
 
 </div>
 
 <script>
 function orderNow(){
 const uid=document.getElementById("uid").value;
-const pack=document.getElementById("package").value;
+const pkg=document.getElementById("pkg").value;
+
+const msg=`EX.KAVIYA Order
+UID: ${uid}
+Package: ${pkg}`;
 
 window.open(
-`https://wa.me/94726198188?text=EX.KAVIYA Order%0AUID: ${uid}%0APackage: ${pack}`
+`https://wa.me/94726198188?text=${encodeURIComponent(msg)}`
 );
 }
 </script>
