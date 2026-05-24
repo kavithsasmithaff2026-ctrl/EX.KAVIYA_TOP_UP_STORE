@@ -52,11 +52,16 @@ export default function ExKaviyaTopupStore() {
           </p>
         </div>
 
-        <img
-          src={logo}
-          alt="Price List"
-          className="w-full rounded-3xl mb-8 shadow-2xl"
-        />
+   <div className="grid md:grid-cols-2 gap-4 mb-8">
+  {packages.map((item) => (
+    <div
+      key={item}
+      className="bg-white/10 rounded-3xl p-5 border border-cyan-500 text-xl"
+    >
+      {item}
+    </div>
+  ))}
+</div> 
 
         <a
           href="https://wa.me/94726198188"
