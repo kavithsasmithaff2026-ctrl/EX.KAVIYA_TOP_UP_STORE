@@ -60,3 +60,111 @@ export default function ExKaviyaTopupStore() {
           padding: "25px",
           borderRadius: "20px",
           margin
+marginTop: "20px",
+          textAlign: "center"
+        }}
+      >
+        <h2>WhatsApp Orders</h2>
+        <a
+          href="https://wa.me/94726198188"
+          style={{ color: "white", fontSize: "34px", fontWeight: "bold" }}
+        >
+          0726198188
+        </a>
+      </div>
+
+      <div
+        style={{
+          background: "#f97316",
+          padding: "25px",
+          borderRadius: "20px",
+          marginTop: "20px"
+        }}
+      >
+        <h2>eZ Cash Wallet Top-Up</h2>
+        <p>Send payment to: 0779887708</p>
+      </div>
+
+      <div style={{ marginTop: "30px" }}>
+        <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          Diamond Price List
+        </h2>
+
+        {prices.map((item) => (
+          <div
+            key={item}
+            onClick={() => setSelectedPackage(item)}
+            style={{
+              background: selectedPackage === item ? "#10d9ff" : "#24345d",
+              color: "white",
+              padding: "18px",
+              marginBottom: "12px",
+              borderRadius: "14px",
+              cursor: "pointer",
+              fontSize: "22px"
+            }}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+
+      <div
+        style={{
+          background: "#1e2a52",
+          padding: "25px",
+          borderRadius: "20px",
+          marginTop: "30px"
+        }}
+      >
+        <h2>Place Your Order</h2>
+
+        <input
+          type="text"
+          placeholder="Enter Free Fire UID"
+          value={uid}
+          onChange={(e) => setUid(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "15px",
+            borderRadius: "12px",
+            fontSize: "18px",
+            marginBottom: "15px"
+          }}
+        />
+
+        <select
+          value={selectedPackage}
+          onChange={(e) => setSelectedPackage(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "15px",
+            borderRadius: "12px",
+            fontSize: "18px",
+            marginBottom: "15px"
+          }}
+        >
+          {prices.map((item) => (
+            <option key={item}>{item}</option>
+          ))}
+        </select>
+
+        <button
+          onClick={orderNow}
+          style={{
+            width: "100%",
+            background: "#10d9ff",
+            color: "white",
+            padding: "18px",
+            border: "none",
+            borderRadius: "12px",
+            fontSize: "22px",
+            fontWeight: "bold"
+          }}
+        >
+          Order Now on WhatsApp
+        </button>
+      </div>
+    </div>
+  );
+}
