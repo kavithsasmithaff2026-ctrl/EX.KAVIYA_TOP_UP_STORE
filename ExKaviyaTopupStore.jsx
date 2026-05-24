@@ -35,7 +35,16 @@ export default function ExKaviyaTopupStore() {
       <div className="max-w-4xl mx-auto">
 
         <div className="text-center py-8">
-          <img
+          <div className="grid md:grid-cols-2 gap-4 mb-8">
+  {packages.map((item) => (
+    <div
+      key={item}
+      className="bg-white/10 rounded-3xl p-5 border border-cyan-500 text-xl"
+    >
+      {item}
+    </div>
+  ))}
+</div>
             src={logo}
             alt="EX.KAVIYA"
             className="w-40 h-40 mx-auto rounded-full object-cover border-4 border-purple-500 shadow-2xl"
